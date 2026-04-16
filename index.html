@@ -118,20 +118,31 @@
         inset 6px 6px 16px var(--sd),
         inset -6px -6px 16px var(--sl);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 8px;
     }
 
     /* SVGアイコン */
     .icon-svg {
-      width: 56px;
-      height: 56px;
+      width: 44px;
+      height: 44px;
     }
 
     .ring-01 .icon-svg { stroke: #4fc4d8; }
     .ring-02 .icon-svg { stroke: #6b8ef0; }
     .ring-03 .icon-svg { stroke: #9b70e8; }
     .ring-04 .icon-svg { stroke: #e8956e; }
+
+    /* 丸の中のテキスト */
+    .circle-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-main);
+      text-align: center;
+    }
 
     /* テキスト部 */
     .item-label {
@@ -373,6 +384,7 @@
             <line x1="28" y1="30" x2="28" y2="44" />
             <polyline points="22,38 28,44 34,38" />
           </svg>
+          <span class="circle-label">取得する</span>
         </div>
       </div>
       <div class="item-label">
@@ -398,6 +410,7 @@
             <polyline points="12,22 24,14 36,20 48,10" />
             <circle cx="48" cy="10" r="3" />
           </svg>
+          <span class="circle-label">判定する</span>
         </div>
       </div>
       <div class="item-label">
@@ -424,6 +437,7 @@
             <circle cx="42" cy="12" r="5" fill="currentColor" opacity="0.25" />
             <circle cx="42" cy="12" r="3" />
           </svg>
+          <span class="circle-label">通知する</span>
         </div>
       </div>
       <div class="item-label">
@@ -451,6 +465,7 @@
             <path d="M42 36 A16 16 0 0 1 28 44" />
             <circle cx="28" cy="28" r="5" />
           </svg>
+          <span class="circle-label">管理する</span>
         </div>
       </div>
       <div class="item-label">
