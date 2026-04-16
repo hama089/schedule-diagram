@@ -24,7 +24,7 @@
     }
 
     body {
-      background: #cdd0dc;
+      background: #d4d8e6;
       font-family: 'Noto Sans JP', 'Inter', sans-serif;
       color: var(--text-main);
       min-height: 100vh;
@@ -103,17 +103,16 @@
       filter: drop-shadow(0 16px 24px rgba(0,0,0,0.18));
     }
 
-    .ring-01 { background: conic-gradient(from 120deg, #7dd8e0, #4fc4d8, #a8e8f0, #4fc4d8, #7dd8e0); }
-    .ring-02 { background: conic-gradient(from 120deg, #a0b8f8, #6b8ef0, #b8ccff, #6b8ef0, #a0b8f8); }
-    .ring-03 { background: conic-gradient(from 120deg, #c8a0f0, #9b70e8, #d8b8ff, #9b70e8, #c8a0f0); }
-    .ring-04 { background: conic-gradient(from 120deg, #f0c87a, #e8956e, #f8dca0, #e8956e, #f0c87a); }
+    .ring-01 { background: conic-gradient(from 120deg, #b8edf5, #7dd8e8, #d8f6fc, #7dd8e8, #b8edf5); }
+    .ring-02 { background: conic-gradient(from 120deg, #c4d4ff, #96b0f4, #dde8ff, #96b0f4, #c4d4ff); }
+    .ring-03 { background: conic-gradient(from 120deg, #e0c8ff, #c098f0, #eeddff, #c098f0, #e0c8ff); }
+    .ring-04 { background: conic-gradient(from 120deg, #fce4b8, #f0b898, #fdf2d8, #f0b898, #fce4b8); }
 
-    /* 内側の白い円（ニューモ） */
+    /* 内側の白い円（ニューモ） — 各カードに淡い色みを追加 */
     .ring-inner {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: var(--bg);
       box-shadow:
         inset 6px 6px 16px var(--sd),
         inset -6px -6px 16px var(--sl);
@@ -122,16 +121,21 @@
       justify-content: center;
     }
 
+    .ring-01 .ring-inner { background: #e8f8fc; }
+    .ring-02 .ring-inner { background: #eef1fc; }
+    .ring-03 .ring-inner { background: #f2eeff; }
+    .ring-04 .ring-inner { background: #fdf4ec; }
+
     /* SVGアイコン */
     .icon-svg {
       width: 56px;
       height: 56px;
     }
 
-    .ring-01 .icon-svg { stroke: #4fc4d8; }
-    .ring-02 .icon-svg { stroke: #6b8ef0; }
-    .ring-03 .icon-svg { stroke: #9b70e8; }
-    .ring-04 .icon-svg { stroke: #e8956e; }
+    .ring-01 .icon-svg { stroke: #5ec8dc; }
+    .ring-02 .icon-svg { stroke: #7898e8; }
+    .ring-03 .icon-svg { stroke: #ae88e4; }
+    .ring-04 .icon-svg { stroke: #e8a880; }
 
     /* テキスト部 */
     .item-label {
@@ -151,10 +155,10 @@
       flex-shrink: 0;
     }
 
-    .ring-01 ~ .item-label .item-num { color: #4fc4d8; }
-    .ring-02 ~ .item-label .item-num { color: #6b8ef0; }
-    .ring-03 ~ .item-label .item-num { color: #9b70e8; }
-    .ring-04 ~ .item-label .item-num { color: #e8956e; }
+    .ring-01 ~ .item-label .item-num { color: #5ec8dc; }
+    .ring-02 ~ .item-label .item-num { color: #7898e8; }
+    .ring-03 ~ .item-label .item-num { color: #ae88e4; }
+    .ring-04 ~ .item-label .item-num { color: #e8a880; }
 
     .item-bar {
       width: 1.5px;
@@ -255,7 +259,7 @@
       font-size: 0.58rem;
       font-weight: 600;
       letter-spacing: 0.15em;
-      color: #9b70e8;
+      color: #ae88e4;
       text-transform: uppercase;
       width: 80px;
       flex-shrink: 0;
@@ -292,7 +296,7 @@
     .notify-icon-circle svg {
       width: 22px;
       height: 22px;
-      stroke: #9b70e8;
+      stroke: #ae88e4;
     }
 
     .notify-title {
