@@ -121,13 +121,31 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 0;
+      padding: 20px 14px;
+      text-align: center;
     }
+
+    /* 丸の中：番号 */
+    .c-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      margin-bottom: 6px;
+    }
+
+    .ring-01 .c-num { color: #4fc4d8; }
+    .ring-02 .c-num { color: #6b8ef0; }
+    .ring-03 .c-num { color: #9b70e8; }
+    .ring-04 .c-num { color: #e8956e; }
 
     /* SVGアイコン */
     .icon-svg {
-      width: 44px;
-      height: 44px;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 7px;
+      flex-shrink: 0;
     }
 
     .ring-01 .icon-svg { stroke: #4fc4d8; }
@@ -135,75 +153,31 @@
     .ring-03 .icon-svg { stroke: #9b70e8; }
     .ring-04 .icon-svg { stroke: #e8956e; }
 
-    /* 丸の中のテキスト */
-    .circle-label {
-      font-size: 0.8rem;
+    /* 丸の中：日本語タイトル */
+    .c-title {
+      font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.1em;
       color: var(--text-main);
-      text-align: center;
+      margin-bottom: 7px;
     }
 
-    /* テキスト部 */
-    .item-label {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 10px;
-      width: 100%;
-    }
-
-    .item-num {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      line-height: 1.2;
+    /* 丸の中：区切り線 */
+    .c-divider {
+      width: 24px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #aab2c8, transparent);
+      margin-bottom: 7px;
       flex-shrink: 0;
     }
 
-    .ring-01 ~ .item-label .item-num { color: #4fc4d8; }
-    .ring-02 ~ .item-label .item-num { color: #6b8ef0; }
-    .ring-03 ~ .item-label .item-num { color: #9b70e8; }
-    .ring-04 ~ .item-label .item-num { color: #e8956e; }
-
-    .item-bar {
-      width: 1.5px;
-      align-self: stretch;
-      background: #c0c6d8;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .item-title-wrap {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .item-en {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      color: var(--text-sub);
-      text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-
-    .item-ja {
-      font-size: 0.88rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--text-main);
-    }
-
-    .item-desc {
-      font-size: 0.68rem;
+    /* 丸の中：説明テキスト */
+    .c-desc {
+      font-size: 0.58rem;
       font-weight: 300;
       color: var(--text-sub);
-      line-height: 1.85;
-      letter-spacing: 0.04em;
-      width: 100%;
+      line-height: 1.75;
+      letter-spacing: 0.03em;
     }
 
     /* ━━━ 下部セクション ━━━ */
@@ -377,32 +351,25 @@
     <div class="item">
       <div class="ring ring-01">
         <div class="ring-inner">
-          <!-- API / ダウンロードアイコン -->
+          <span class="c-num">01</span>
           <svg class="icon-svg" viewBox="0 0 56 56" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="28" cy="18" r="9" />
             <path d="M19 18 C10 18 8 30 8 36 H48 C48 30 46 18 37 18" />
             <line x1="28" y1="30" x2="28" y2="44" />
             <polyline points="22,38 28,44 34,38" />
           </svg>
-          <span class="circle-label">取得する</span>
+          <span class="c-title">取得する</span>
+          <div class="c-divider"></div>
+          <p class="c-desc">notify.py が毎日22:00<br>APIから予定を取得</p>
         </div>
       </div>
-      <div class="item-label">
-        <span class="item-num">01</span>
-        <div class="item-bar"></div>
-        <div class="item-title-wrap">
-          <span class="item-en">Fetch</span>
-          <span class="item-ja">取得する</span>
-        </div>
-      </div>
-      <p class="item-desc">notify.py が毎日22:00に自動実行<br>APIからスケジュール予定を取得</p>
     </div>
 
     <!-- 02 判定する -->
     <div class="item">
       <div class="ring ring-02">
         <div class="ring-inner">
-          <!-- 分析アイコン -->
+          <span class="c-num">02</span>
           <svg class="icon-svg" viewBox="0 0 56 56" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="8" y="38" width="8" height="10" rx="1.5" />
             <rect x="22" y="28" width="8" height="20" rx="1.5" />
@@ -410,25 +377,18 @@
             <polyline points="12,22 24,14 36,20 48,10" />
             <circle cx="48" cy="10" r="3" />
           </svg>
-          <span class="circle-label">判定する</span>
+          <span class="c-title">判定する</span>
+          <div class="c-divider"></div>
+          <p class="c-desc">予定データを解析<br>通知対象を自動抽出</p>
         </div>
       </div>
-      <div class="item-label">
-        <span class="item-num">02</span>
-        <div class="item-bar"></div>
-        <div class="item-title-wrap">
-          <span class="item-en">Analyze</span>
-          <span class="item-ja">判定する</span>
-        </div>
-      </div>
-      <p class="item-desc">取得した予定データを解析<br>通知が必要な対象を自動抽出</p>
     </div>
 
     <!-- 03 通知する -->
     <div class="item">
       <div class="ring ring-03">
         <div class="ring-inner">
-          <!-- 通知アイコン -->
+          <span class="c-num">03</span>
           <svg class="icon-svg" viewBox="0 0 56 56" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M28 8 C18 8 14 16 14 24 L12 38 H44 L42 24 C42 16 38 8 28 8 Z" />
             <line x1="24" y1="38" x2="24" y2="42" />
@@ -437,25 +397,18 @@
             <circle cx="42" cy="12" r="5" fill="currentColor" opacity="0.25" />
             <circle cx="42" cy="12" r="3" />
           </svg>
-          <span class="circle-label">通知する</span>
+          <span class="c-title">通知する</span>
+          <div class="c-divider"></div>
+          <p class="c-desc">LINE Messaging APIへ<br>担当者へ自動通知</p>
         </div>
       </div>
-      <div class="item-label">
-        <span class="item-num">03</span>
-        <div class="item-bar"></div>
-        <div class="item-title-wrap">
-          <span class="item-en">Notify</span>
-          <span class="item-ja">通知する</span>
-        </div>
-      </div>
-      <p class="item-desc">LINE Messaging APIへ送信<br>担当者へリアルタイム自動通知</p>
     </div>
 
     <!-- 04 管理する -->
     <div class="item">
       <div class="ring ring-04">
         <div class="ring-inner">
-          <!-- 循環アイコン -->
+          <span class="c-num">04</span>
           <svg class="icon-svg" viewBox="0 0 56 56" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M40 16 A16 16 0 0 1 44 28" />
             <polyline points="36,12 40,16 44,12" />
@@ -465,18 +418,11 @@
             <path d="M42 36 A16 16 0 0 1 28 44" />
             <circle cx="28" cy="28" r="5" />
           </svg>
-          <span class="circle-label">管理する</span>
+          <span class="c-title">管理する</span>
+          <div class="c-divider"></div>
+          <p class="c-desc">毎日自動で繰り返し<br>人手不要で継続稼働</p>
         </div>
       </div>
-      <div class="item-label">
-        <span class="item-num">04</span>
-        <div class="item-bar"></div>
-        <div class="item-title-wrap">
-          <span class="item-en">Manage</span>
-          <span class="item-ja">管理する</span>
-        </div>
-      </div>
-      <p class="item-desc">毎日自動で繰り返し実行<br>人手不要で継続稼働</p>
     </div>
 
   </div><!-- /flow-grid -->
